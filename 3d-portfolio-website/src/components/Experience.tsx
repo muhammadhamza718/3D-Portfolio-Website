@@ -6,7 +6,7 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import { motion } from "framer-motion";
-import { StaticImageData } from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 import "react-vertical-timeline-component/style.min.css";
 
@@ -36,10 +36,12 @@ const ExperienceCard: React.FC<{ experience: ExperienceType }> = ({ experience }
       iconStyle={{ background: experience.iconBg }}
       icon={
         <div className='flex justify-center items-center w-full h-full'>
-          <img
+          <Image
             src={experience.icon.src}
             alt={experience.company_name}
             className='w-[60%] h-[60%] object-contain'
+            height={1000}
+            width={1000}
           />
         </div>
       }
